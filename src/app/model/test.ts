@@ -1,3 +1,3 @@
 export class Test {
-    message:String | undefined;
+    message: String | undefined;
 }

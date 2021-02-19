@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Test } from '../model/test';
 import { HomeServiceService } from '../services/home-service.service';
 @Component({
   selector: 'app-testing',
@@ -7,7 +8,7 @@ import { HomeServiceService } from '../services/home-service.service';
 })
 export class TestingComponent implements OnInit {
 
-  name:any ="";
+  name: Test[] = [];
   constructor(private homeService:HomeServiceService) { 
     
   }
@@ -17,7 +18,7 @@ export class TestingComponent implements OnInit {
   }
 
   loadString(){
-    this.homeService.getString()
-    .subscribe(this.name) 
+    this.homeService.getString().subscribe(data => {
+      this.name = data;});
   }
 }

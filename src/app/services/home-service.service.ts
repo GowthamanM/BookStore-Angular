@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Test} from '../model/test'
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class HomeServiceService {
 
-  apiUrl = 'http://localhost:8080/';
-  httpOptions = {
-    headers :new HttpHeaders({
-      'Content-Type':'application/json'
-    })    
+  private apiUrl: string;
+
+  constructor(private http: HttpClient) {
+    this.apiUrl = 'http://localhost:8080/';
   }
 
-  constructor(private _http: HttpClient) {}
 
-  getString(){
-    return this._http.get<Test>(this.apiUrl);
+  public getString(): Observable<Test[]> {
+    return this.http.get<Test[]>(this.apiUrl);
   }
 }
