@@ -12,7 +12,7 @@ public class OrderModel {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	String orderId;
 	String dateTime;
-	Cart cart;
+	CartModel cart;
 	String status;
 	public String getOrderId() {
 		return orderId;
@@ -26,10 +26,10 @@ public class OrderModel {
 	public void setDateTime(String dateTime) {
 		this.dateTime = dateTime;
 	}
-	public Cart getCart() {
+	public CartModel getCart() {
 		return cart;
 	}
-	public void setCart(Cart cart) {
+	public void setCart(CartModel cart) {
 		this.cart = cart;
 	}
 	public String getStatus() {

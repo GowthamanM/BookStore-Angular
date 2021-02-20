@@ -9,13 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Cart {
+public class CartModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	String cartID;
 	String userID;
-	List<CartItem> cartItems;
+	List<CartItemModel> cartItems;
 	
 	public String getCartID() {
 		return cartID;
@@ -29,10 +29,10 @@ public class Cart {
 	public void setUserID(String userID) {
 		this.userID = userID;
 	}
-	public List<CartItem> getCartItems() {
+	public List<CartItemModel> getCartItems() {
 		return cartItems;
 	}
-	public void setCartItems(List<CartItem> cartItems) {
+	public void setCartItems(List<CartItemModel> cartItems) {
 		this.cartItems = cartItems;
 	}
 	

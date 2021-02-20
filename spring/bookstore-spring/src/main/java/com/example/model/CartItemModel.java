@@ -6,14 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CartItem extends ProductModel {
+public class CartItemModel extends ProductModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	String cartItemId;
 	int quantity;
 	
-	public CartItem() {
+	public CartItemModel() {
 		// TODO Auto-generated constructor stub
 		super();
 	}

@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.repository.CartRepository;
-import com.example.model.Cart;
-import com.example.model.CartItem;
+import com.example.model.CartModel;
+import com.example.model.CartItemModel;
 
 @Service
 public class CartService {
@@ -16,7 +16,7 @@ public class CartService {
 	@Autowired
 	public CartRepository cartRepo;
 	
-	public String saveCart(Cart cart) {
+	public String saveCart(CartModel cart) {
 		try {
 			cartRepo.save(cart);
 			return "success";
@@ -26,8 +26,8 @@ public class CartService {
 		return "failure";
 	}
 	
-	public Cart getCartByUserID(String userId) {
-		Optional<Cart> cart = null;
+	public CartModel getCartByUserID(String userId) {
+		Optional<CartModel> cart = null;
 		
 		try {
 			cart = cartRepo.findById(userId);
@@ -41,12 +41,12 @@ public class CartService {
 		return cart.get();
 	}
 	
-	public List<CartItem> getCartItemsFromCart(Cart cart) {
+	public List<CartItemModel> getCartItemsFromCart(CartModel cart) {
 		return cart.getCartItems();
 	}
 	
-	public String addCartItem(String userId, CartItem cartItem) {
-		Cart cart = this.getCartByUserID(userId);
+	public String addCartItem(String userId, CartItemModel cartItem) {
+		CartModel cart = this.getCartByUserID(userId);
 		cart.getCartItems().add(cartItem);
 		return this.saveCart(cart);
 	}
@@ -59,9 +59,9 @@ public class CartService {
 			} catch(Exception e) {
 				System.out.println(e.getMessage());
 			}
-		} else if(obj instanceof Cart) {
+		} else if(obj instanceof CartModel) {
 			try {
-				cartRepo.delete((Cart) obj);
+				cartRepo.delete((CartModel) obj);
 				return "success";
 			} catch(Exception e) {
 				System.out.println(e.getMessage());
