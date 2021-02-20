@@ -1,1 +1,30 @@
-<p>signup works!</p>
+<div class="row">
+    <div class="col-md-4">
+        <h1 class="text-center">SIGN UP</h1>
+        <form class="text-center">
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Enter Username">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Enter Mobilenumber">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Confirm Password">
+            </div>
+            <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+          </form>
+          <div class="text-center" style="margin-top: 10px;">
+              <small class="text-center">Already a user? <a [routerLink]="'/'">Sign In</a></small>
+          </div>
+    </div>
+    <div class="col-md-3">
+      <img class="img-responsive" style="width: 300px;" src="../../assets/images/Booklover.svg" alt="">
+      <h2 class="brand text-center">BOOK STORE</h2>
+    </div>
+</div>

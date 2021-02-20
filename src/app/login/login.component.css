@@ -2,15 +2,22 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(#7F00FF,#E100FF);
     
 }
 .col-md-4{
     border-radius: 15px;
     padding: 55px;
     background-color: white;
+    /* border: 1px solid #6C63FF; */
 }
 #submitButton{
-    background-color: #E100FF;
+    background-color: #6C63FF;
     border: none;
+}
+.brand{
+    color:#6C63FF;
+    font-family: 'Reggae One', cursive;
+}
+.col-md-3{
+    margin-left: 55px;
 }
