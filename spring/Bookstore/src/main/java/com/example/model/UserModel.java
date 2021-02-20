@@ -13,15 +13,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-
 public class UserModel {
 	
 	@Id
 	String email;
 	String password;
 	String username;
-	double mobileNumber;
-	String gender;
+	String mobileNumber;
 	String address;
 	boolean active;
 	String role;
@@ -57,20 +55,12 @@ public class UserModel {
 		this.username = username;
 	}
 
-	public double getMobileNumber() {
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
 
-	public void setMobileNumber(double mobileNumber) {
+	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
 	}
 
 	public String getAddress() {
@@ -116,7 +106,7 @@ public class UserModel {
 	@Override
 	public String toString() {
 		return "UserModel [email=" + email + ", password=" + password + ", username=" + username + ", mobileNumber="
-				+ mobileNumber + ", gender=" + gender + ", address=" + address + ", active=" + active + ", role=" + role
+				+ mobileNumber + ", address=" + address + ", active=" + active + ", role=" + role
 				+ ", cart=" + cart + ", ordersList=" + ordersList + "]";
 	}
 
