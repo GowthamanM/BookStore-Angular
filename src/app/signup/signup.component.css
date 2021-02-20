@@ -21,3 +21,6 @@
 .col-md-3{
     margin-left: 55px;
 }
+.errorMessage{
+    color:red;
+}

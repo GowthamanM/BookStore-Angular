@@ -7,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
+  errorMessage = "";
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  test(){
-    alert("working");
+  test(data:String,pass1:String,pass2:String){
+    if(pass1 !== pass2){
+      this.errorMessage = "Password does not match";
+    }else{
+      this.errorMessage = "";
+    }
   }
 }
