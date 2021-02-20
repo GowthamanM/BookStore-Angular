@@ -16,6 +16,7 @@ public class UserService {
 	@Autowired
 	public UserRepository userRepo;
 	
+//	Get all the users
 	public List<UserModel> getAllUsers() {	
 		List<UserModel> users = null;
 		try {
@@ -30,6 +31,7 @@ public class UserService {
 		return users;
 	}
 	
+//	Get the user by id
 	public UserModel getUser(String userId) {	
 		Optional<UserModel> user = null;
 		try {
@@ -43,6 +45,7 @@ public class UserService {
 		return user.get();
 	}
 	
+//	Save the user
 	public String saveUser(UserModel user) {
 		try {
 			userRepo.save(user);
@@ -63,6 +66,7 @@ public class UserService {
 		return "failure";
 	}
 	
+//	delete the user
 	public String deleteUser(UserModel user) {
 		try {
 			userRepo.delete(user);
@@ -73,6 +77,8 @@ public class UserService {
 		return "failure";
 	}
 	
+	
+//	Delete the user by id
 	public String deleteUserById(String userId) {
 		try {
 			userRepo.deleteById(userId);

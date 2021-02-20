@@ -1,11 +1,11 @@
 package com.example.model;
 
-import java.util.Date;
-
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class CartItem extends ProductModel {
 	
 	@Id
@@ -13,11 +13,9 @@ public class CartItem extends ProductModel {
 	String cartItemId;
 	int quantity;
 	
-	@SuppressWarnings("deprecation")
 	public CartItem() {
 		// TODO Auto-generated constructor stub
 		super();
-		this.cartItemId = new String((Math.floor(Math.random() * 100)) +  new Date().toLocaleString());
 	}
 
 	public int getQuantity() {
