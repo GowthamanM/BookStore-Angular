@@ -31,7 +31,6 @@ export class SignupComponent implements OnInit {
       console.log(this.userData);
       this.signupService.save(this.userData).subscribe(() => this.gotoLogin());
       this.errorMessage = "";
-      
     }
   }
 
