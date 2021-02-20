@@ -20,7 +20,6 @@ public class UserModel {
 	String password;
 	String username;
 	String mobileNumber;
-	String address;
 	boolean active;
 	String role;
 	
@@ -63,14 +62,6 @@ public class UserModel {
 		this.mobileNumber = mobileNumber;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
 	public boolean isActive() {
 		return active;
 	}
@@ -106,7 +97,7 @@ public class UserModel {
 	@Override
 	public String toString() {
 		return "UserModel [email=" + email + ", password=" + password + ", username=" + username + ", mobileNumber="
-				+ mobileNumber + ", address=" + address + ", active=" + active + ", role=" + role
+				+ mobileNumber + ", active=" + active + ", role=" + role
 				+ ", cart=" + cart + ", ordersList=" + ordersList + "]";
 	}
 

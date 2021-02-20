@@ -24,7 +24,6 @@ public class SignupController {
 		data.setEmail(user.getEmail());
 		data.setUsername(user.getUsername());
 		data.setMobileNumber(user.getMobileNumber());
-		data.setAddress(user.getAddress());
 		data.setRole(user.getRole());
 		data.setActive(true);
 		data.setPassword(user.getPassword());
