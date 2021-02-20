@@ -25,7 +25,6 @@ export class SignupComponent implements OnInit {
     }else{
       this.userData.email = email;
       this.userData.username = username;
-      this.userData.address="temp";
       this.userData.mobileNumber = number;
       this.userData.password = pass1;
       console.log(this.userData);

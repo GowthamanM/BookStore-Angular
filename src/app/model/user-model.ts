@@ -3,7 +3,6 @@ export class UserModel {
     username:String | undefined;
     mobileNumber:String | undefined;
     password:String | undefined;
-    address:String | undefined;
     active:boolean = true;
     role:String = "ROLE_USER";
 }
