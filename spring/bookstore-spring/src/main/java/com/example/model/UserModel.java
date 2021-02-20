@@ -9,11 +9,10 @@ import javax.persistence.Id;
 public class UserModel {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	String email;
 	String password;
 	String username;
-	double mobileNumber;
+	String mobileNumber;
 	String gender;
 	String address;
 	boolean active;
@@ -39,10 +38,10 @@ public class UserModel {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public double getMobileNumber() {
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
-	public void setMobileNumber(double mobileNumber) {
+	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 	public String getGender() {

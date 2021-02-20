@@ -1,0 +1,16 @@
+.row{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(#7F00FF,#E100FF);
+    
+}
+.col-md-4{
+    border-radius: 15px;
+    padding: 55px;
+    background-color: white;
+}
+#submitButton{
+    background-color: #E100FF;
+    border: none;
+}
