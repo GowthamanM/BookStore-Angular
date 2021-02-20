@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  test(data:String,pass1:String,pass2:String){
+  test(email:String,pass1:String,pass2:String,username:String,number:String){
     if(pass1 !== pass2){
       this.errorMessage = "Password does not match";
     }else{
