@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class SignupComponent implements OnInit {
 
   errorMessage = "";
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +19,7 @@ export class SignupComponent implements OnInit {
       this.errorMessage = "Password does not match";
     }else{
       this.errorMessage = "";
+      this.router.navigate(['']);
     }
   }
 }
