@@ -11,6 +11,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { OrderlistComponent } from './admin/orderlist/orderlist.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { HomeComponent } from './home/home.component';
+import { ProductEditComponent } from './admin/product-edit/product-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     DashboardComponent,
     OrderlistComponent,
     AdminNavComponent,
-    HomeComponent
+    HomeComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,

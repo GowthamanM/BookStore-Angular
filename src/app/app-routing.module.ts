@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { OrderlistComponent } from './admin/orderlist/orderlist.component';
+import { ProductEditComponent } from './admin/product-edit/product-edit.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'admin',component:AdminComponent,children:[
     {path:'',component:DashboardComponent},
-    {path:'orders',component:OrderlistComponent}
+    {path:'orders',component:OrderlistComponent},
+    {path:'productEdit',component:ProductEditComponent}
   ]}
 ];
 
