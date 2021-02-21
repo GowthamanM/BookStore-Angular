@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.repository.UserRepository;
 import com.example.model.UserModel;
+import com.example.tempmodel.UserTempModel;
 
 @Service
 public class UserService {
@@ -46,9 +47,19 @@ public class UserService {
 	}
 	
 //	Save the user
-	public String saveUser(UserModel user) {
+	public String saveUser(UserTempModel user) {
+		
+		UserModel convertedUser = new UserModel(
+				user.getEmail(), 
+				user.getUsername(), 
+				user.getMobileNumber(), 
+				user.getRole(), 
+				user.getPassword(), 
+				true
+		);
+		
 		try {
-			userRepo.save(user);
+			userRepo.save(convertedUser);
 			return "success";
 		} catch(Exception e) {
 			System.out.println("Error\n" + e.getMessage());

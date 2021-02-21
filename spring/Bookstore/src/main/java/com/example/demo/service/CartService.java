@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.repository.CartRepository;
+import com.example.demo.repository.UserRepository;
 import com.example.model.CartModel;
+import com.example.model.UserModel;
 import com.example.model.CartItemModel;
 
 @Service
@@ -16,6 +18,10 @@ public class CartService {
 	@Autowired
 	public CartRepository cartRepo;
 	
+	@Autowired
+	public UserRepository userRepo;
+	
+		
 	public String saveCart(CartModel cart) {
 		try {
 			cartRepo.save(cart);
@@ -27,30 +33,39 @@ public class CartService {
 	}
 	
 	public CartModel getCartByUserID(String userId) {
-		Optional<CartModel> cart = null;
-		
-		try {
-			cart = cartRepo.findById(userId);
-			if(cart.isEmpty()) {
-				System.out.println("Cart doesn't exist for the user");
-				return null;
-			}
-		} catch(Exception e) {
-			System.out.println(e.getMessage());
+		Optional<UserModel> user = userRepo.findById(userId);
+		if(user.isPresent()) {
+			return user.get().getCart();
 		}
-		return cart.get();
+		return null;
 	}
 	
-//	public List<CartItemModel> getCartItemsFromCart(CartModel cart) {
-//		return cart.getCartItems();
-//	}
+	
+	public List<CartItemModel> getCartItemsFromCart(String userId) {
+		CartModel cart = this.getCartByUserID(userId);
+		return cart.getCartItems();
+	}
 //	
-//	public String addCartItem(String userId, CartItemModel cartItem) {
-//		CartModel cart = this.getCartByUserID(userId);
-//		cart.getCartItems().add(cartItem);
-//		return this.saveCart(cart);
-//	}
-//		
+	public String addCartItem(String userId, CartItemModel cartItem) {
+		CartModel cart = this.getCartByUserID(userId);
+		cart.getCartItems().add(cartItem);
+		return this.saveCart(cart);
+	}
+	
+	public String deleteCartItem(String userId, CartItemModel cartItem) {
+		CartModel cart = this.getCartByUserID(userId);
+		List<CartItemModel> items = cart.getCartItems();
+		items.remove(cartItem);
+		cart.setCartItems(items);
+		return this.saveCart(cart);
+	}
+	
+	public String deleteAllCartItems(String userId) {
+		CartModel cart = this.getCartByUserID(userId);
+		cart.getCartItems().clear();
+		return this.saveCart(cart);
+	}
+	
 	public String deleteCartByIdorCartObject(Object obj) {
 		if(obj instanceof String) {
 			try {
