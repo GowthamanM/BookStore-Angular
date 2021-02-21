@@ -3,6 +3,7 @@ package com.example.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,6 +31,11 @@ public class CartController {
 	@PostMapping("/users/cart/{userId}/items/add")
 	public String addCartItemToCart(@PathVariable String userId, @RequestBody CartItemModel cartItem) {
 		return cartService.addCartItem(userId, cartItem);
+	}
+	
+	@DeleteMapping("/users/cart/{userId}/delete/{cartItemId}")
+	public String deleteCartItem(@PathVariable String userId, @PathVariable String cartItemId) {
+		return cartService.deleteCartItem(userId, cartItemId);
 	}
 	
 	

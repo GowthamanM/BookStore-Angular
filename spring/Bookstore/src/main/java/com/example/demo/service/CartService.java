@@ -1,11 +1,13 @@
 package com.example.demo.service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.repository.CartItemRepository;
 import com.example.demo.repository.CartRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.model.CartModel;
@@ -20,6 +22,9 @@ public class CartService {
 	
 	@Autowired
 	public UserRepository userRepo;
+	
+	@Autowired
+	public CartItemRepository cartItemRepo;
 	
 		
 	public String saveCart(CartModel cart) {
@@ -48,16 +53,24 @@ public class CartService {
 //	
 	public String addCartItem(String userId, CartItemModel cartItem) {
 		CartModel cart = this.getCartByUserID(userId);
-		cart.getCartItems().add(cartItem);
+		
+		List<CartItemModel> list = cart.getCartItems();
+		list.removeIf(listItem -> listItem.getCartItemId().equals(cartItem.getCartItemId()));
+		
+//		.stream().filter(listItem -> (listItem.getCartItemId().equals(cartItem.getCartItemId()) )).count();
+		cart.setCartItems(list);		
 		return this.saveCart(cart);
 	}
 	
-	public String deleteCartItem(String userId, CartItemModel cartItem) {
-		CartModel cart = this.getCartByUserID(userId);
-		List<CartItemModel> items = cart.getCartItems();
-		items.remove(cartItem);
-		cart.setCartItems(items);
-		return this.saveCart(cart);
+	public String deleteCartItem(String userId, String cartItemId) {
+//		CartModel cart = this.getCartByUserID(userId);
+//		List<CartItemModel> items = cart.getCartItems();
+//		items.remove(cartItem);
+//		cart.setCartItems(items);
+//		return this.saveCart(cart);
+		
+		cartItemRepo.deleteById(cartItemId);
+		return "success";
 	}
 	
 	public String deleteAllCartItems(String userId) {
