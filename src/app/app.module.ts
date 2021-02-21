@@ -12,6 +12,7 @@ import { OrderlistComponent } from './admin/orderlist/orderlist.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './services/auth.guard';
+import { ProductEditComponent } from './admin/product-edit/product-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { AuthGuard } from './services/auth.guard';
     DashboardComponent,
     OrderlistComponent,
     AdminNavComponent,
-    HomeComponent
+    HomeComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
