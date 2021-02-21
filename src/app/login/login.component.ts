@@ -10,14 +10,18 @@ import {Login} from '../model/login';
 })
 export class LoginComponent implements OnInit {
 
-  status: boolean = false;
-  
+  status: boolean = false; 
 
   errorMessage:String="";
 
-  constructor(private router:Router,private loginService:LoginService) { }
+  constructor(private route:Router,private loginService:LoginService) { 
+    // this.loginService.loginStatus = false;
+  }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    if(this.loginService.loginStatus) {
+      this.route.navigate(['home']);
+    }
   }
 
   userData : Login = new Login;
@@ -31,16 +35,19 @@ export class LoginComponent implements OnInit {
     // this.loginService.checkUser(this.userData).subscribe(data=>{
     //   this.users = data;
     // });
-    this.loginService.checkUser(this.userData).subscribe(Logindata=> {
-      if(Logindata) {
-        this.status = true;
+    this.loginService.checkUser(this.userData).subscribe(
+      loginData=> {
+      if(loginData) {
+        this.loginService.loginStatus = true;
+        this.route.navigate(['home']);
       }
-      console.log(this.status);
+      // console.log(this.status);
+      console.log(this.loginService.loginStatus);
     });
 
   }
 
   gotoAdmin(){
-    this.router.navigate(['signup']);
+    this.route.navigate(['signup']);
   }
 }
