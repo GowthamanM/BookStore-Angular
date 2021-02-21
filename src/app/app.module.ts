@@ -7,12 +7,18 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { OrderlistComponent } from './admin/orderlist/orderlist.component';
+import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    AdminComponent
+    AdminComponent,
+    DashboardComponent,
+    OrderlistComponent,
+    AdminNavComponent
   ],
   imports: [
     BrowserModule,
