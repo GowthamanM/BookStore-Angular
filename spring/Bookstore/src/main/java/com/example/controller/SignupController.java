@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.repository.UserRepository;
+import com.example.demo.service.UserService;
 import com.example.model.UserModel;
 import com.example.tempmodel.UserTempModel;
 
@@ -15,19 +16,12 @@ import com.example.tempmodel.UserTempModel;
 public class SignupController {
 
 	@Autowired
-	UserRepository userRepo;
+	UserService userService;
 	
 	@PostMapping("/signup")
 	public boolean saveUser(@RequestBody UserTempModel user) {
-		System.out.println(user);
-		UserModel data = new UserModel();
-		data.setEmail(user.getEmail());
-		data.setUsername(user.getUsername());
-		data.setMobileNumber(user.getMobileNumber());
-		data.setRole(user.getRole());
-		data.setActive(true);
-		data.setPassword(user.getPassword());
-		userRepo.save(data);
-		return true;
+		return userService.saveUser(user).equals("success") ? true : false;
 	}
+	
+	
 }
