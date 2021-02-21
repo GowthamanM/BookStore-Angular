@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.repository.UserRepository;
 import com.example.model.UserModel;
-import com.example.model.UserTempModel;
+import com.example.tempmodel.UserTempModel;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
