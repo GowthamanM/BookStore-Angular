@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.repository.UserRepository;
 import com.example.model.UserModel;
-import com.example.model.UserTempModel;
+import com.example.tempmodel.UserTempModel;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -18,7 +18,7 @@ public class SignupController {
 	UserRepository userRepo;
 	
 	@PostMapping("/signup")
-	public void saveUser(@RequestBody UserTempModel user) {
+	public boolean saveUser(@RequestBody UserTempModel user) {
 		System.out.println(user);
 		UserModel data = new UserModel();
 		data.setEmail(user.getEmail());
@@ -28,5 +28,6 @@ public class SignupController {
 		data.setActive(true);
 		data.setPassword(user.getPassword());
 		userRepo.save(data);
+		return true;
 	}
 }
