@@ -1,6 +1,35 @@
 <app-admin-nav></app-admin-nav>
 <div class="container">
-    <div class="col-md-8">
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">Image</th>
+                      <th scope="col">Book Name</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Quantity</th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                <tbody>
+                  <tr *ngFor="let product of productList">
+                      <td> <img [src]="product.imageUrl" alt="ss" width="50px" class="img-responsive"> </td>
+                    <td>{{product.productName}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td class="btn btn-warning" style="color: whitesmoke;margin-right: 10px;"><i class="fa fa-pencil"></i></td>
+                    <td class="btn btn-danger"><i class="fa fa-trash-o"></i></td>
+                </tr>
+                </tbody>
+              </table>
 
+        </div>
+        <div class="col-md-4">
+            <img 
+            id="productImage"
+            src="../../../assets/images/productImage.svg" width="100%" alt="">
+        </div>
     </div>
 </div>
