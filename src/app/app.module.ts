@@ -10,6 +10,7 @@ import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { OrderlistComponent } from './admin/orderlist/orderlist.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
     AdminComponent,
     DashboardComponent,
     OrderlistComponent,
-    AdminNavComponent
+    AdminNavComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
