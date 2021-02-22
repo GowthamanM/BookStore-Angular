@@ -15,12 +15,14 @@
                   </thead>
                 <tbody>
                   <tr *ngFor="let product of productList">
-                      <td> <img [src]="product.imageUrl" alt="ss" width="50px" class="img-responsive"> </td>
+                      <td> <img [src]="product.imageUrl" alt="ss" width="50px" 
+                        class="img-responsive"> </td>
                     <td>{{product.productName}}</td>
                     <td>{{product.price}}</td>
                     <td>{{product.quantity}}</td>
                     <td style="margin-right: 10px;"><a class="btn btn-warning text-white" 
-                        routerLink="/admin/productEdit/{{product.productId}}"><i class="fa fa-pencil"></i></a></td>
+                        routerLink="/admin/productEdit/{{product.productId}}" (click)="setId(product.productId)">
+                        <i class="fa fa-pencil"></i></a></td>
                     <td style="margin-top: 10px;"><a class="btn btn-danger text-white"><i class="fa fa-trash-o"></i></a></td>
                 </tr>
                 </tbody>
