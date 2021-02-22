@@ -46,47 +46,47 @@ public class ProductService {
 	}
 	
 //	Save the product
-	public boolean saveproduct(ProductModel product) {
+	public String saveproduct(ProductModel product) {
 		try {
 			productRepo.save(product);
-			return true;
+			return "success";
 		} catch(Exception e) {
 			System.out.println("Error\n" + e.getMessage());
 		}
-		return false;
+		return "failure";
 	}
 	
-	public boolean updateproduct(ProductModel product) {
+	public String updateproduct(ProductModel product) {
 		try {
 			productRepo.save(product);
-			return true;
+			return "success";
 		} catch(Exception e) {
 			System.out.println("Error\n" + e.getMessage());
 		}
-		return false;
+		return "failure";
 	}
 	
 //	delete the product
-	public boolean deleteproduct(ProductModel product) {
+	public String deleteproduct(ProductModel product) {
 		try {
 			productRepo.delete(product);
-			return true;
+			return "success";
 		} catch(Exception e) {
 			System.out.println("Error\n" + e.getMessage());
 		}
-		return false;
+		return "failure";
 	}
 	
 	
 //	Delete the product by id
-	public boolean deleteproductById(String productId) {
+	public String deleteproductById(String productId) {
 		try {
 			productRepo.deleteById(productId);
-			return true;
+			return "success";
 		} catch(Exception e) {
 			System.out.println("Error\n" + e.getMessage());
 		}
-		return false;
+		return "failure";
 	}	
 	
 }

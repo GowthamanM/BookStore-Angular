@@ -1,6 +1,5 @@
 package com.example.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -30,21 +29,6 @@ public class UserModel {
 	
 	@OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST ,CascadeType.REMOVE, CascadeType.REFRESH})
 	List<OrderModel> ordersList;
-	
-	public UserModel() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public UserModel(String email, String username, String mobilenumber, String role, String password, boolean active) {
-		this.email = email;
-		this.username = username;
-		this.mobileNumber = mobilenumber;
-		this.role = role;
-		this.password = password;
-		this.active = active;
-		this.cart = new CartModel();
-		this.ordersList = new ArrayList<>();
-	}
 
 	public String getEmail() {
 		return email;

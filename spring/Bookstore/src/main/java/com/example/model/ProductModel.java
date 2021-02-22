@@ -22,10 +22,24 @@ public class ProductModel {
     strategy = "org.hibernate.id.UUIDGenerator"
     )
 	String productId;
-	String imageUrl;
 	String productName;
 	String price;
 	String description;
+	String imageUrl;
+	int quantity;
+	public int getQuantity() {
+		return quantity;
+	}
+	
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 	public String getProductId() {
 		return productId;
 	}
@@ -50,16 +64,12 @@ public class ProductModel {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	public String getImageUrl() {
-		return imageUrl;
-	}
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
 	@Override
 	public String toString() {
-		return "ProductModel [productId=" + productId + ", imageUrl=" + imageUrl + ", productName=" + productName
-				+ ", price=" + price + ", description=" + description + "]";
-	}
+		return "ProductModel [productId=" + productId + ", productName=" + productName + ", price=" + price
+				+ ", description=" + description + ", imageUrl=" + imageUrl + ", quantity=" + quantity + "]";
+	}	
+	
+	
+	
 }
