@@ -11,8 +11,8 @@ import{NgForm} from '@angular/forms'
 export class AddproductComponent implements OnInit {
 
   product:Productmodel = new Productmodel;
+  
   constructor(private addproductService: AddproductService,public router:Router) { }
-
   ngOnInit(): void {
   }
 

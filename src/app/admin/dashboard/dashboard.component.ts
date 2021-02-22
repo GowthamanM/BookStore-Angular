@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Productmodel } from 'src/app/model/productmodel';
 import { ProductService } from 'src/app/services/product.service';
+import { ProductdeleteService } from 'src/app/services/productdelete.service';
 import { ProducteditService } from 'src/app/services/productedit.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class DashboardComponent implements OnInit {
 
   productList:Productmodel[]=[];
   constructor(private productService:ProductService,public router:Router,
-    private producteditService:ProducteditService) { }
+    private producteditService:ProducteditService,private productDeleteService:ProductdeleteService) { }
 
   ngOnInit(): void {
       this.productService.getProduct().subscribe(data=>this.productList=data);
@@ -25,6 +26,11 @@ export class DashboardComponent implements OnInit {
     console.log(s);
     
     this.producteditService.setid(s);
+    
   }
-
+  deleteId(a:any){
+    console.log("called");
+    this.productDeleteService.setid(a);
+    this.productDeleteService.deleteProduct().subscribe(()=>this.router.navigate(['admin']));
+  }
 }

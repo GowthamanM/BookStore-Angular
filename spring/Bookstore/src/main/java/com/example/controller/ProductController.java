@@ -62,4 +62,10 @@ public class ProductController {
         System.out.println(product);
         productService.saveproduct(product);
     }
+    
+    @GetMapping("/admin/delete/{id}")
+    public void productDelete(@PathVariable String id) {
+    	System.out.println(id);
+    	productService.deleteproductById(id);
+    }
 }
