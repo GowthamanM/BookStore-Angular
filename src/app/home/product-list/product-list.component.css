@@ -3,3 +3,9 @@
   background-size: cover;
   height: 350px;
 }
+
+.card {
+  /* width: 250px; */
+  border-radius: 15px;
+  border:none
+}
