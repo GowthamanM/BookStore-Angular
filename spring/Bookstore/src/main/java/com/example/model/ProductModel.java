@@ -57,15 +57,17 @@ public class ProductModel {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public String getImageUrl() {
 		return imageUrl;
 	}
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
+	public void setImageurl(String imageurl) {
+		this.imageUrl = imageurl;
 	}
 	@Override
 	public String toString() {
 		return "ProductModel [productId=" + productId + ", imageurl=" + imageUrl + ", productName=" + productName
+
 				+ ", price=" + price + ", description=" + description + "]";
 	}
 }
