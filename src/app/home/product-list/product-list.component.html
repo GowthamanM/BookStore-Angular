@@ -1,8 +1,38 @@
-<div class="text-center pt-5 caro1 img-responsive">
-  <h1 style="margin-top: 70px; font-size: 50px;">Welcome Home</h1>
+<div class="text-center pt-5 caro1 img-responsive row">
+  <h1 
+    class="col-md-5" 
+    style="margin-top: 70px; font-size: 60px; color:white;"
+  > 
+    Welcome 
+  </h1>
+  <h1 class="col-md-1"></h1>
+  <h1 
+    class="col-md-6" 
+    style="margin-top: 70px; font-size: 60px; color:white;"
+  >
+    Home
+  </h1>
 </div>
-<div class="container-fluid pt-4">
-  <div class="card-deck">
-    <app-product-list-item></app-product-list-item>
+<div class="container-fluid">
+  <div class="row">
+    <a
+    *ngFor = "let prd of products"
+    style="text-decoration: none; color:black; cursor: pointer; "
+    >
+      <div class="col-sm d-flex">
+        <div class="card card-body flex-fill" style="width: 200px;">
+          <img 
+          class="flex-fill carImgSize" 
+          [src] = "prd.imageUrl" 
+          alt="Card-image cap"
+          style="height: 200px;"
+          >
+          <div class="card-body">
+            <h5 class="card-title">{{prd.productName}}</h5>
+            <p class="card-text">Price : {{prd.price}}</p>
+          </div>
+        </div>
+      </div>
+    </a>
   </div>
 </div>

@@ -15,7 +15,6 @@ import { AuthGuard } from './services/auth.guard';
 import { ProductEditComponent } from './admin/product-edit/product-edit.component';
 import { ClientNavComponent } from './home/client-nav/client-nav.component';
 import { ProductListComponent } from './home/product-list/product-list.component';
-import { ProductListItemComponent } from './home/product-list/product-list-item/product-list-item.component';
 import { AddproductComponent } from './admin/addproduct/addproduct.component';
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { AddproductComponent } from './admin/addproduct/addproduct.component';
     ProductEditComponent,
     ClientNavComponent,
     ProductListComponent,
-    ProductListItemComponent,
     AddproductComponent
   ],
   imports: [
