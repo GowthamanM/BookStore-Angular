@@ -22,7 +22,7 @@ public class ProductModel {
     strategy = "org.hibernate.id.UUIDGenerator"
     )
 	String productId;
-	String imageurl;
+	String imageUrl;
 	String productName;
 	String price;
 	String description;
@@ -57,25 +57,17 @@ public class ProductModel {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-<<<<<<< Updated upstream
+
 	public String getImageUrl() {
 		return imageUrl;
-=======
-	
-	public String getImageurl() {
-		return imageurl;
->>>>>>> Stashed changes
 	}
 	public void setImageurl(String imageurl) {
-		this.imageurl = imageurl;
+		this.imageUrl = imageurl;
 	}
 	@Override
 	public String toString() {
-<<<<<<< Updated upstream
 		return "ProductModel [productId=" + productId + ", imageurl=" + imageUrl + ", productName=" + productName
-=======
-		return "ProductModel [productId=" + productId + ", imageurl=" + imageurl + ", productName=" + productName
->>>>>>> Stashed changes
+
 				+ ", price=" + price + ", description=" + description + "]";
 	}
 }
