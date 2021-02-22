@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {UserModel} from '../model/user-model'
+import { Productmodel } from '../model/productmodel';
 
 @Injectable({
   providedIn: 'root'
-}) 
-export class SignupServiceService {
+})
+export class ProducteditService {
 
   private apiUrl: string;
 
   constructor(private http: HttpClient) {
-    this.apiUrl = 'http://localhost:8080/signup';
+    this.apiUrl = 'http://localhost:8080/admin/productEdit/1';
   }
 
-  public save(user: UserModel) {
-    return this.http.post<UserModel>(this.apiUrl, user);
+  public getProduct():Observable<Productmodel>{
+    return this.http.get<Productmodel>(this.apiUrl);
   }
+  
+
 }
