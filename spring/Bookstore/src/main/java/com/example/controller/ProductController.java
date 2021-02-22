@@ -47,7 +47,8 @@ public class ProductController {
     @GetMapping("/admin/productEdit/{id}")
     public ProductModel test(@PathVariable String id) {
         System.out.println(id);
-        return productService.getproduct(id);
+        System.out.println(productService.getproduct(id));
+        return (ProductModel)productService.getproduct(id);
     }
     
     @PostMapping("/admin/addProduct")
