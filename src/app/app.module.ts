@@ -28,13 +28,10 @@ import { AddproductComponent } from './admin/addproduct/addproduct.component';
     AdminNavComponent,
     HomeComponent,
     ProductEditComponent,
-<<<<<<< HEAD
     ClientNavComponent,
     ProductListComponent,
-    ProductListItemComponent
-=======
+    ProductListItemComponent,
     AddproductComponent
->>>>>>> e1cf170fef995451346be290852983869c735d6b
   ],
   imports: [
     BrowserModule,
