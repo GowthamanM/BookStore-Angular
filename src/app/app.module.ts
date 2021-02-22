@@ -18,6 +18,7 @@ import { ProductListComponent } from './home/product-list/product-list.component
 import { AddproductComponent } from './admin/addproduct/addproduct.component';
 import { ProductListItemComponent } from './home/product-list/product-list-item/product-list-item.component';
 import { ProductDetailComponent } from './home/product-detail/product-detail.component';
+import { OrdersComponent } from './admin/orders/orders.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { ProductDetailComponent } from './home/product-detail/product-detail.com
     ProductListComponent,
     AddproductComponent,
     ProductListItemComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

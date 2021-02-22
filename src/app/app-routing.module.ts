@@ -33,6 +33,7 @@ const routes: Routes = [
     {path:'',component:DashboardComponent},
     {path:'orders',component:OrderlistComponent},
     {path:'productEdit/:id',component:ProductEditComponent},
+    {path:'delete/:id',component:DashboardComponent},
     {path:'addProduct',component:AddproductComponent}
   ]}
 ];
