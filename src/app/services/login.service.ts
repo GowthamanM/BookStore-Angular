@@ -8,6 +8,8 @@ import{Login} from '../model/login';
 })
 export class LoginService {
 
+  loginStatus: boolean = false;
+
   private apiUrl:string;
 
   constructor(private http: HttpClient) {
