@@ -9,6 +9,7 @@ import { ProductEditComponent } from './admin/product-edit/product-edit.componen
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './services/auth.guard';
 import { SignupComponent } from './signup/signup.component';
+import { ProductDetailComponent } from './home/product-detail/product-detail.component';
 
 const routes: Routes = [
   {
@@ -22,9 +23,11 @@ const routes: Routes = [
   },
   {
     path:'home',
-    component:HomeComponent,
+    component:HomeComponent
     // canActivate: [AuthGuard]
+    
   },
+  {path:'home/:id',component:ProductDetailComponent},
   {path:'signup',component:SignupComponent},
   {path:'admin',component:AdminComponent,children:[
     {path:'',component:DashboardComponent},

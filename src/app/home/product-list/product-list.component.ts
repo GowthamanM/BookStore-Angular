@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Productmodel } from 'src/app/model/productmodel';
-import { ProductListService } from './product-list.service';
 import { map } from 'rxjs/operators';
+import { ProductListService } from 'src/app/services/product-list.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
+  providers: [ProductListService]
 })
 export class ProductListComponent implements OnInit {
 
   products:Productmodel[] | undefined;
 
   constructor(private productListService:ProductListService) { 
-    this.getAllProducts();
-    
+    this.getAllProducts();   
   }
 
   ngOnInit(): void {
