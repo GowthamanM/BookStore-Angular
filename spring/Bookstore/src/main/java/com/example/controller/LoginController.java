@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.repository.UserRepository;
-import com.example.model.LoginModel;
 import com.example.model.UserModel;
+import com.example.tempmodel.LoginModel;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class LoginController {
 
 	@Autowired
