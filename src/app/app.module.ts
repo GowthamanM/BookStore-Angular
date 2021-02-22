@@ -13,6 +13,9 @@ import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './services/auth.guard';
 import { ProductEditComponent } from './admin/product-edit/product-edit.component';
+import { ClientNavComponent } from './home/client-nav/client-nav.component';
+import { ProductListComponent } from './home/product-list/product-list.component';
+import { ProductListItemComponent } from './home/product-list/product-list-item/product-list-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,10 @@ import { ProductEditComponent } from './admin/product-edit/product-edit.componen
     OrderlistComponent,
     AdminNavComponent,
     HomeComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    ClientNavComponent,
+    ProductListComponent,
+    ProductListItemComponent
   ],
   imports: [
     BrowserModule,
