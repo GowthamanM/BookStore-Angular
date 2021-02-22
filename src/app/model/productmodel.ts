@@ -4,5 +4,5 @@ export class Productmodel {
     price:String|undefined;
     description:String|undefined;
     imageUrl:String|undefined;
-    quantity:Number|undefined;
+    quantity:Number|undefined; 
 }

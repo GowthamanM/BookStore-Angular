@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
@@ -16,6 +16,7 @@ import { ProductEditComponent } from './admin/product-edit/product-edit.componen
 import { ClientNavComponent } from './home/client-nav/client-nav.component';
 import { ProductListComponent } from './home/product-list/product-list.component';
 import { ProductListItemComponent } from './home/product-list/product-list-item/product-list-item.component';
+import { AddproductComponent } from './admin/addproduct/addproduct.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,9 +28,13 @@ import { ProductListItemComponent } from './home/product-list/product-list-item/
     AdminNavComponent,
     HomeComponent,
     ProductEditComponent,
+<<<<<<< HEAD
     ClientNavComponent,
     ProductListComponent,
     ProductListItemComponent
+=======
+    AddproductComponent
+>>>>>>> e1cf170fef995451346be290852983869c735d6b
   ],
   imports: [
     BrowserModule,
