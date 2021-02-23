@@ -12,34 +12,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.service.CartService;
+import com.example.demo.service.ProductService;
 import com.example.model.CartItemModel;
 import com.example.model.CartModel;
+import com.example.model.CartTempModel;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CartController {
 	
 	@Autowired
-	public CartService cartService;
+	ProductService productRepo;
 	
-	@GetMapping("/users/cart/{userId}")
-	public CartModel getCart(@PathVariable String userId) {
-		return cartService.getCartByUserID(userId);
-	}
-	
-	@GetMapping("/users/cart/{userId}/items")
-	public List<CartItemModel> getAllCartItems(@PathVariable String userId) {
-		return cartService.getCartItemsFromCart(userId);
-	}
-	
-	@PostMapping("/users/cart/{userId}/items/add")
-	public String addCartItemToCart(@PathVariable String userId, @RequestBody CartItemModel cartItem) {
-		return cartService.addCartItem(userId, cartItem);
-	}
-	
-	@DeleteMapping("/users/cart/{userId}/delete/{cartItemId}")
-	public String deleteCartItem(@PathVariable String userId, @PathVariable String cartItemId) {
-		return cartService.deleteCartItem(userId, cartItemId);
+	@PostMapping("/home/{id}")
+	public void addToCart(@RequestBody String Quantity,@PathVariable String id) {
+		CartTempModel cart = new CartTempModel();
+		System.out.println(productRepo.getproduct(id));
+		System.out.println(id+"-->"+Quantity);
 	}
 	
 	

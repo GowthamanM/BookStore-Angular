@@ -8,6 +8,7 @@ import{Login} from '../model/login';
 })
 export class LoginService {
 
+  userId:any;
   loginStatus: boolean = false;
 
   private apiUrl:string;
@@ -19,6 +20,8 @@ export class LoginService {
   public checkUser(data:Login):Observable<Boolean> {
     return this.http.post<Boolean>(this.apiUrl, data);
   }
-
+  setId(data:any){
+    this.userId = data;
+  }
 
 }

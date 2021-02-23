@@ -3,6 +3,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Productmodel } from 'src/app/model/productmodel';
 import { map } from 'rxjs/operators';
 import { ProductListService } from 'src/app/services/product-list.service';
+import { ProductDetailService } from './product-detail.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -14,8 +16,11 @@ export class ProductDetailComponent implements OnInit {
   products : Productmodel[] | undefined;
   // products:any;
   id: string | undefined;
-
-  constructor(private productListService: ProductListService, private route: ActivatedRoute) { 
+  userQuantity:Number = 1;
+  userEmail:any;
+  constructor(private productListService: ProductListService, private route: ActivatedRoute,
+    private productDetailService:ProductDetailService,private router:Router
+    ,private loginService:LoginService) { 
     this.getAllProducts(); 
   }
 
@@ -46,5 +51,17 @@ export class ProductDetailComponent implements OnInit {
       // console.log(this.products);
     });
   }
+
+  addToCart(){
+
+    console.log(this.userQuantity);
+    this.productDetailService.setid(this.id);
+    this.userEmail = this.loginService.userId;
+    console.log(this.userEmail);
+    
+    this.productDetailService.addCart(this.userQuantity+"",this.userEmail).subscribe(()=>this.router.navigate(['home']));
+  }
+
+
 
 }
