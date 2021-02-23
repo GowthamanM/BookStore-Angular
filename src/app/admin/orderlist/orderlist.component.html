@@ -1,4 +1,30 @@
 <app-admin-nav></app-admin-nav>
 <div class="container">
-    
+    <table class="table table-hover">
+        <thead>
+            <tr>
+              <th scope="col">OrderId</th>
+              <th scope="col">UserId</th>
+              <th scope="col">Book Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+        <tbody>
+          <tr *ngFor="let order of orderList">
+              <td>{{order.orderId}}</td>
+              <td>{{order.userId}}</td>
+              <td>{{order.productName}}</td>
+              <td>{{order.price}}</td>
+              <td>{{order.quantity}}</td>
+              <td *ngIf="order.status === 'not delivered'" style="color:red">
+                  {{order.status}}
+                </td>
+                <td *ngIf="order.status === 'delivered'" style="color:green">
+                    {{order.status}}
+                  </td>
+            </tr>
+        </tbody>
+      </table>
 </div>
