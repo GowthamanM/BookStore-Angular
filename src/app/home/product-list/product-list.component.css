@@ -1,7 +1,10 @@
 .caro1 {
-  background-image: url('../../../assets/images/bg2.jpg');
-  background-size: cover;
-  height: 350px;
+  background-image: url('../../../assets/images/bg3.jpg');
+  /* background-size: cover; */
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 335px;
+  /* margin-right: 50px; */
 }
 
 .card {

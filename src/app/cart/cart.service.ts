@@ -21,6 +21,6 @@ export class CartService {
   }
 
   getCart():Observable<Cart[]>{
-        return this.http.get<Cart[]>(this.apiUrl);
+    return this.http.get<Cart[]>(this.apiUrl);
   }
 }
