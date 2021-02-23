@@ -10,7 +10,7 @@ import {Login} from '../model/login';
 })
 export class LoginComponent implements OnInit {
 
-  status: boolean = false; 
+  status!: boolean; 
 
   errorMessage:String="";
 
@@ -39,8 +39,12 @@ export class LoginComponent implements OnInit {
       loginData=> {
       if(loginData) {
         this.loginService.loginStatus = true;
+        this.status = true;
         this.loginService.setId(email);
         this.route.navigate(['home']);
+      }
+      else {
+        this.status = false;
       }
       // console.log(this.status);
       console.log(this.loginService.loginStatus);

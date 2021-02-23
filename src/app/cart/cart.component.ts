@@ -10,6 +10,7 @@ import { CartService } from './cart.service';
 })
 export class CartComponent implements OnInit {
 
+  hasItems:boolean = false;
   cartItems:Cart[]=[];
   constructor(private cartService:CartService,private loginService:LoginService) { }
 
@@ -17,8 +18,15 @@ export class CartComponent implements OnInit {
       this.cartService.setid(this.loginService.userId);
       this.cartService.getCart().subscribe(data => {
         this.cartItems = data;
+        this.checkLength();
         console.log(this.cartItems);
       })
+  }
+
+  checkLength() {
+    if(this.cartItems.length>0) {
+      this.hasItems = true;
+    }
   }
 
 }
