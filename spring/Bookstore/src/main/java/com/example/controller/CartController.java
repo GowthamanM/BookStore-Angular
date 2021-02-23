@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.repository.CartTempRepo;
 import com.example.demo.service.CartService;
 import com.example.demo.service.ProductService;
 import com.example.model.CartItemModel;
 import com.example.model.CartModel;
 import com.example.model.CartTempModel;
+import com.example.model.ProductModel;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -24,11 +26,20 @@ public class CartController {
 	@Autowired
 	ProductService productRepo;
 	
+	@Autowired
+	CartTempRepo cartRepo;
+	
 	@PostMapping("/home/{id}")
 	public void addToCart(@RequestBody String Quantity,@PathVariable String id) {
+		ProductModel p = productRepo.getproduct(id);
 		CartTempModel cart = new CartTempModel();
-		System.out.println(productRepo.getproduct(id));
-		System.out.println(id+"-->"+Quantity);
+		String[] arr = Quantity.split(" ");
+		cart.setQuantity(Integer.parseInt(arr[0]));
+		cart.setUserId(arr[1]);
+		cart.setProductName(p.getProductName());
+		cart.setPrice(p.getPrice());
+		cartRepo.save(cart);
+		
 	}
 	
 	
