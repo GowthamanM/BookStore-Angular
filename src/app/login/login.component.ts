@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       loginData=> {
       if(loginData) {
         this.loginService.loginStatus = true;
+        this.loginService.setId(email);
         this.route.navigate(['home']);
       }
       // console.log(this.status);

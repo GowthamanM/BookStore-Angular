@@ -29,19 +29,19 @@
           <h5 class="pt-2">Description</h5>
           <p>{{prd.description}}</p>
         </div>
-        <form>
+        <!-- <form> -->
           <label for="quant">Quantity</label> <br>
-          <input type="number" id="quant">
-          <button id="addButton" type="submit" class="btn btn-danger" style="width:80px; height:35px; margin-left: 20px;">Add</button>
-          <p>2 quantites added</p>
-        </form>
+          <input type="number" id="quant" min="1" [(ngModel)]="userQuantity" [max]=prd.quantity>
+          <!-- <button id="addButton" type="submit" class="btn btn-danger" style="width:80px; height:35px; margin-left: 20px;">Add</button>
+          <p>2 quantites added</p> -->
+        <!-- </form> -->
       </div>
-      <div class="row justify-content-center pt-3">
+      <div class="row justify-content-center pt-3" style="margin-bottom: 30px;">
         <div class="col-md-6 text-center">
-          <button class="btn btn-warning" >Add to Cart</button>
+          <a class="btn btn-warning text-white" (click)="addToCart()">Add to Cart</a>
         </div>
-        <div class="col-md-6 text-center">
-          <button class="btn btn-success">Book Order</button>
+        <div class="col-md-6 text-center text-white">
+          <a class="btn btn-success">Book Order</a>
         </div>
       </div>
     </div>
