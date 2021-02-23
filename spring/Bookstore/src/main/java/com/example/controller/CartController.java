@@ -39,7 +39,6 @@ public class CartController {
 		cart.setProductName(p.getProductName());
 		cart.setPrice(p.getPrice());
 		cartRepo.save(cart);
-		
 	}
 	
 	
