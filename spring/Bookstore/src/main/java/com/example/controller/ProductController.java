@@ -51,6 +51,19 @@ public class ProductController {
         return (ProductModel)productService.getproduct(id);
     }
     
+    @PostMapping("/admin/productEdit/{id}")
+    public void productEditSave(@RequestBody ProductModel data) {
+        ProductModel product = new ProductModel();
+        product.setProductId(data.getProductId());
+        product.setProductName(data.getProductName());
+        product.setPrice(data.getPrice());
+        product.setImageUrl(data.getImageUrl());
+        product.setQuantity(data.getQuantity());
+        product.setDescription(data.getDescription());
+        System.out.println(product);
+        productService.saveproduct(product);
+    }
+    
     @PostMapping("/admin/addProduct")
     public void productSave(@RequestBody ProductModel data) {
         ProductModel product = new ProductModel();

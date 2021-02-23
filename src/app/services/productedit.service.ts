@@ -32,4 +32,8 @@ export class ProducteditService {
     this.apiUrl = 'http://localhost:8080/admin/productEdit/'+this.productId;
   }
 
+  public save(product:Productmodel){
+    return this.http.post<Productmodel>(this.apiUrl,product);
+}
+
 }
