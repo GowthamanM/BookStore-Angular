@@ -20,6 +20,6 @@ export class ProductDetailService {
   public addCart(Quantity:String,userId:String):Observable<String>{
     console.log(Quantity);
     
-    return this.http.post<String>(this.apiUrl,(Quantity+'|'+userId));
+    return this.http.post<String>(this.apiUrl,(Quantity+' '+userId));
   }
 }
