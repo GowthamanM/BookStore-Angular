@@ -41,5 +41,8 @@ public class CartController {
 		cartRepo.save(cart);
 	}
 	
-	
+	@GetMapping("/cart/{id}")
+	public List<CartTempModel> showCart(@PathVariable String id){
+		return (List<CartTempModel>) cartRepo.findByUserId(id);
+	}
 }
