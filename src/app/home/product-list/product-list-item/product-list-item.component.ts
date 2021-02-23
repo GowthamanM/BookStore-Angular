@@ -9,7 +9,7 @@ import { Productmodel } from 'src/app/model/productmodel';
 export class ProductListItemComponent implements OnInit {
 
   @Input() prod!:Productmodel;
-  @Input() index!: number;
+  // @Input() index!: number;
 
   constructor() { }
 

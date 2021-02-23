@@ -11,9 +11,9 @@ import { ProductListService } from 'src/app/services/product-list.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  // product!: Productmodel;
-  products:any;
-  id: number = 0;
+  products : Productmodel[] | undefined;
+  // products:any;
+  id: string | undefined;
 
   constructor(private productListService: ProductListService, private route: ActivatedRoute) { 
     this.getAllProducts(); 
@@ -24,7 +24,7 @@ export class ProductDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = params['id'];
-          console.log(this.id);
+          // console.log(this.id);
         }
       );
   }
@@ -43,7 +43,7 @@ export class ProductDetailComponent implements OnInit {
     .subscribe(data => {
       
       this.products = data;
-      console.log(this.products);
+      // console.log(this.products);
     });
   }
 

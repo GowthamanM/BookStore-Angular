@@ -1,6 +1,3 @@
 <ul *ngFor = "let prd of products">
-  <!-- if(prd.id ===id) {
-  }  -->
-  <li>{{prd.productName}}</li>
+  <li *ngIf="prd.productId===id">{{prd.productName}}</li>
 </ul>
-<!-- <p>ut works</p> -->
