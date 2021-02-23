@@ -26,7 +26,7 @@ public class CartItemModel {
 	String cartItemId;
 	int quantity;
 	String productName;
-	double price;
+	String price;
 	String description;
 	
 	@ManyToOne(cascade = {CascadeType.PERSIST ,CascadeType.REMOVE, CascadeType.REFRESH})
@@ -57,11 +57,11 @@ public class CartItemModel {
 		this.productName = productName;
 	}
 
-	public double getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 
