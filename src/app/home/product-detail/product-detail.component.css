@@ -1,27 +1,27 @@
 .ImgCol {
-  height: 350px;
-  border:1px solid green;
+  height: 325px;
+  /* border:1px solid green; */
 }
 
 .secCol {
-  border:1px solid blue;
+  /* border:1px solid blue; */
   /* height: 500px; */
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .desc {
-  border:1px solid yellow;
+  /* border:1px solid yellow; */
   height:130px;
 }
 
 .wholeCol {
-  border:1px solid red;
+  /* border:1px solid red; */
   height:400px;
 }
 
 .btn {
   width:250px;
-  height:45px;
+  height:40px;
 }
 
 #quant {
