@@ -1,11 +1,13 @@
 <!-- <ul *ngFor = "let prd of products">
   <li *ngIf="prd.productId===id">{{prd.productName}}</li>
 </ul> -->
-<app-client-nav></app-client-nav>
+
 <div
   *ngFor = "let prd of products"
 >
-  <div class="row pt-4" *ngIf="prd.productId===id">
+<div *ngIf="prd.productId===id">
+  <app-client-nav></app-client-nav>
+  <div class="row pt-4" >
     <div class="col-md-4 ImgCol d-flex justify-content-center">
       <!-- <p>Image column</p> -->
       <img 
@@ -15,16 +17,16 @@
       >
     </div>
     <div class="col-md-8 secCol">
-      <div style="height:450px;">
+      <div style="" class="wholeCol">
         <h2 class="pt-3">{{prd.productName}}</h2>
-        <h4 class="pt-3 prdprice">Price : {{prd.price}}</h4>
+        <h4 class="pt-2 prdprice">Price : {{prd.price}}</h4>
         <p>
           <i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{prd.quantity}} stocks only left 
         </p>
-        <hr style="margin-top:25px; width: 850px; margin-left: 20px;">
+        <hr style="margin-top:20px; width: 850px; margin-left: 20px;">
   
         <div class="desc">
-          <h5 class="pt-3">Description</h5>
+          <h5 class="pt-2">Description</h5>
           <p>{{prd.description}}</p>
         </div>
         <form>
@@ -44,4 +46,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
