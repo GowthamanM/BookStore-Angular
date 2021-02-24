@@ -10,27 +10,24 @@
       routerLinkActive="active"
       [routerLinkActiveOptions]="{exact:true}"
       >
-        <a class="nav-link" routerLink="/home"> Home </a>
+        <a class="nav-link" routerLink="/home"><i class="fa fa-home"></i> Home</a>
       </li>
       <li class="nav-item"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{exact:true}"
       >
-        <a class="nav-link" routerLink="/cart">Cart</a>
+        <a class="nav-link" routerLink="/cart"><i class="fa fa-cart-arrow-down"></i> Cart</a>
       </li>
       <li class="nav-item"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{exact:true}"
       >
-        <a class="nav-link" routerLink="/orders">My Order</a>
+        <a class="nav-link" routerLink="/orders"><i class="fa fa-truck"></i> My Order</a>
       </li>
     </ul>
-    <ul class="navbar-nav ml-auto">
-      <li 
-        class="nav-item"
-      >
-        <a class="nav-link" (click)="onLogout()">Logout</a>
-      </li>
-    </ul>
+    <span class="navbar-text">
+      <a id="logout" (click)="onLogout()"><i class="fa fa-sign-out"></i> Logout</a>
+
+    </span> 
   </div>
-</nav>
+</nav> 
