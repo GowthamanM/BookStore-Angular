@@ -23,4 +23,10 @@ export class CartService {
   getCart():Observable<Cart[]>{
     return this.http.get<Cart[]>(this.apiUrl);
   }
+
+  delete(id:String):Observable<String>{
+    this.apiUrl = 'http://localhost:8080/cart/delete';
+    console.log(this.apiUrl);
+    return this.http.post<String>(this.apiUrl,id);
+  }
 }

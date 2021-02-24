@@ -16,7 +16,10 @@
             <td>{{cart.productName}}</td>
             <td class="text-center">{{cart.price}}</td>
             <td class="text-center">{{cart.quantity}}</td>
-            <td style="margin-right: 10px;" class="text-center"><a class="btn btn-danger text-white"> <i class="fa fa-trash-o"></i></a></td>
+            <td style="margin-right: 10px;" class="text-center">
+            <a class="btn btn-danger text-white"
+            (click)="deleteCart(cart.cartItemId)"
+            routerLink="/cart/delete"><i class="fa fa-trash-o"></i></a></td>
           </tr>
         </tbody>
       </table>

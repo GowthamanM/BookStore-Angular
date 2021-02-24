@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cart } from '../model/cart';
 import { LoginService } from '../services/login.service';
 import { CartService } from './cart.service';
@@ -12,7 +13,8 @@ export class CartComponent implements OnInit {
 
   hasItems:boolean = false;
   cartItems:Cart[]=[];
-  constructor(private cartService:CartService,private loginService:LoginService) { }
+  constructor(private cartService:CartService,private loginService:LoginService
+    ,private router:Router) { }
 
   ngOnInit(): void {
       this.cartService.setid(this.loginService.userId);
@@ -29,4 +31,9 @@ export class CartComponent implements OnInit {
     }
   }
 
+  deleteCart(id:String){  
+      this.cartService.delete(id).subscribe(()=>{
+        this.router.navigate(['cart']);
+      });
+  }
 }

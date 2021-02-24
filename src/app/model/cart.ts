@@ -1,5 +1,5 @@
 export class Cart {
-    cartId:any;
+    cartItemId:any;
     userId:any;
     productName:any;
     quantity:any;

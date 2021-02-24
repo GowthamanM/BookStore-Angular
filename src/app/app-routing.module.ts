@@ -31,6 +31,7 @@ const routes: Routes = [
   {path:'home/:id',component:ProductDetailComponent},
   {path:'signup',component:SignupComponent},
   {path:'cart',component:CartComponent},
+  {path:'cart/delete',component:CartComponent},
   {path:'admin',component:AdminComponent,children:[
     {path:'',component:DashboardComponent},
     {path:'orders',component:OrderlistComponent},

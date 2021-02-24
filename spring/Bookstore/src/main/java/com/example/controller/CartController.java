@@ -20,7 +20,7 @@ import com.example.model.CartTempModel;
 import com.example.model.ProductModel;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class CartController {
 	
 	@Autowired
@@ -44,5 +44,11 @@ public class CartController {
 	@GetMapping("/cart/{id}")
 	public List<CartTempModel> showCart(@PathVariable String id){
 		return (List<CartTempModel>) cartRepo.findByUserId(id);
+	}
+	
+	@PostMapping("/cart/delete")
+	public void deleteCartItem(@RequestBody String id) {
+		System.out.println(id);
+		cartRepo.deleteById(id);
 	}
 }
