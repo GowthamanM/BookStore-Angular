@@ -38,7 +38,6 @@ export class CartComponent implements OnInit {
   }
 
   placeOrder(){
-
     this.cartService.placeOrder(this.loginService.userId).subscribe(()=>{
       this.router.navigate(['cart']);
     })

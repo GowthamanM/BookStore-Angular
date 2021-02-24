@@ -11,12 +11,14 @@ import { UserOrderService } from './user-order.service';
 })
 export class UserOrderComponent implements OnInit {
 
+  hasItems:boolean = false;
   orders:Ordermodel[] = [];
 
   constructor(private userOrderService:UserOrderService,private loginService:LoginService
     ,private router:Router) { 
         this.userOrderService.getProducts(this.loginService.userId).subscribe((data)=>{
           this.orders = data;
+          this.checkLength();
         });
         console.log(this.orders);
     }
@@ -24,5 +26,10 @@ export class UserOrderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  checkLength() {
+    if(this.orders.length>0) {
+      this.hasItems = true;
+    }
+  }
 
 }
