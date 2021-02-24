@@ -31,24 +31,30 @@ export class LoginComponent implements OnInit {
     
     this.userData.email = email;
     this.userData.password = password;
+
+    if(this.userData.email==='admin' && this.userData.password==='admin') {
+      this.route.navigate(['admin']);
+    }
     // console.log(this.userData);
     // this.loginService.checkUser(this.userData).subscribe(data=>{
     //   this.users = data;
     // });
-    this.loginService.checkUser(this.userData).subscribe(
-      loginData=> {
-      if(loginData) {
-        this.loginService.loginStatus = true;
-        this.status = true;
-        this.loginService.setId(email);
-        this.route.navigate(['home']);
-      }
-      else {
-        this.status = false;
-      }
-      // console.log(this.status);
-      console.log(this.loginService.loginStatus);
-    });
+    else {
+      this.loginService.checkUser(this.userData).subscribe(
+        loginData=> {
+        if(loginData) {
+          this.loginService.loginStatus = true;
+          this.status = true;
+          this.loginService.setId(email);
+          this.route.navigate(['home']);
+        }
+        else {
+          this.status = false;
+        }
+        // console.log(this.status);
+        console.log(this.loginService.loginStatus);
+      });
+    }
 
   }
 
