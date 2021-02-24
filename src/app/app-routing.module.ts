@@ -11,6 +11,7 @@ import { AuthGuard } from './services/auth.guard';
 import { SignupComponent } from './signup/signup.component';
 import { ProductDetailComponent } from './home/product-detail/product-detail.component';
 import { CartComponent } from './cart/cart.component';
+import { UserOrderComponent } from './user-order/user-order.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'home/:id',component:ProductDetailComponent},
   {path:'signup',component:SignupComponent},
   {path:'cart',component:CartComponent},
+  {path:'orders',component:UserOrderComponent},
   {path:'cart/delete',component:CartComponent},
   {path:'admin',component:AdminComponent,children:[
     {path:'',component:DashboardComponent},

@@ -4,5 +4,6 @@ export class Ordermodel {
     productName:any;
     quantity:any;
     price:any;
-    status:any;
+    Status:any;
+    totalPrice:any;
 }

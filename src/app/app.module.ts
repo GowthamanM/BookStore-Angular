@@ -20,6 +20,7 @@ import { ProductListItemComponent } from './home/product-list/product-list-item/
 import { ProductDetailComponent } from './home/product-detail/product-detail.component';
 import { OrdersComponent } from './admin/orders/orders.component';
 import { CartComponent } from './cart/cart.component';
+import { UserOrderComponent } from './user-order/user-order.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { CartComponent } from './cart/cart.component';
     ProductListItemComponent,
     ProductDetailComponent,
     OrdersComponent,
-    CartComponent
+    CartComponent,
+    UserOrderComponent
   ],
   imports: [
     BrowserModule,

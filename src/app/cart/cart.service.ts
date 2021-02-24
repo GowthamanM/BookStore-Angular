@@ -29,4 +29,9 @@ export class CartService {
     console.log(this.apiUrl);
     return this.http.post<String>(this.apiUrl,id);
   }
+
+  placeOrder(cart:String):Observable<String>{
+    this.apiUrl = 'http://localhost:8080/saveOrder';
+    return this.http.post<String>(this.apiUrl,cart);
+  }
 }

@@ -36,4 +36,11 @@ export class CartComponent implements OnInit {
         this.router.navigate(['cart']);
       });
   }
+
+  placeOrder(){
+
+    this.cartService.placeOrder(this.loginService.userId).subscribe(()=>{
+      this.router.navigate(['cart']);
+    })
+  }
 }

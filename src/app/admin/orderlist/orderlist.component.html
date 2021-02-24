@@ -18,11 +18,11 @@
               <td>{{order.productName}}</td>
               <td>{{order.price}}</td>
               <td>{{order.quantity}}</td>
-              <td *ngIf="order.status === 'not delivered'" style="color:red">
-                  {{order.status}}
+              <td *ngIf="order.Status === 'not delivered'" style="color:red">
+                  {{order.Status}}
                 </td>
-                <td *ngIf="order.status === 'delivered'" style="color:green">
-                    {{order.status}}
+                <td *ngIf="order.Status === 'delivered'" style="color:green">
+                    {{order.Status}}
                   </td>
             </tr>
         </tbody>
