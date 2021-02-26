@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
     this.userData.password = password;
 
     if(this.userData.email==='admin' && this.userData.password==='admin') {
+      this.loginService.loginStatus = true;
       this.route.navigate(['admin']);
     }
     // console.log(this.userData);
