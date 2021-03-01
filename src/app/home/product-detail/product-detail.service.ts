@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Ordermodel } from 'src/app/model/ordermodel';
 
 @Injectable({
   providedIn: 'root'
@@ -22,4 +23,9 @@ export class ProductDetailService {
     
     return this.http.post<String>(this.apiUrl,(Quantity+' '+userId));
   }
-}
+
+  placeOrder(order:Ordermodel):Observable<String>{
+    this.apiUrl = 'http://localhost:8080/placeOrder';
+    return this.http.post<String>(this.apiUrl,order);
+  }
+} 

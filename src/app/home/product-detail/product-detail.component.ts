@@ -5,6 +5,8 @@ import { map } from 'rxjs/operators';
 import { ProductListService } from 'src/app/services/product-list.service';
 import { ProductDetailService } from './product-detail.service';
 import { LoginService } from 'src/app/services/login.service';
+import { CartService } from 'src/app/cart/cart.service';
+import { Ordermodel } from 'src/app/model/ordermodel';
 
 @Component({
   selector: 'app-product-detail',
@@ -14,13 +16,14 @@ import { LoginService } from 'src/app/services/login.service';
 export class ProductDetailComponent implements OnInit {
 
   products : Productmodel[] | undefined;
+  order:Ordermodel = new Ordermodel;
   // products:any;
   id: string | undefined;
   userQuantity:Number = 1;
   userEmail:any;
   constructor(private productListService: ProductListService, private route: ActivatedRoute,
     private productDetailService:ProductDetailService,private router:Router
-    ,private loginService:LoginService) { 
+    ,private loginService:LoginService,private cartService:CartService) { 
     this.getAllProducts(); 
   }
 
@@ -62,6 +65,17 @@ export class ProductDetailComponent implements OnInit {
     this.productDetailService.addCart(this.userQuantity+"",this.userEmail).subscribe(()=>this.router.navigate(['home']));
   }
 
+  addToOrder(name:any,price:any){
+    this.order.userId = this.loginService.userId;
+    this.order.productName = name;
+    this.order.price = price;
+    this.order.Status = "not delivered";
+    this.order.quantity = this.userQuantity;
+    console.log(this.order);
+    this.productDetailService.placeOrder(this.order).subscribe(()=>{
+      this.router.navigate(['orders']);
+    })
+  }
 
 
 }

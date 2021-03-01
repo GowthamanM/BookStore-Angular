@@ -68,7 +68,7 @@ public class OrderTemp {
 	@Override
 	public String toString() {
 		return "OrderTemp [orderId=" + orderId + ", userId=" + userId + ", ProductName=" + ProductName + ", quantity="
-				+ quantity + ", totalPrice=" + totalPrice + ", Status=" + Status + "]";
+				+ quantity + ", totalPrice=" + totalPrice + ", Status=" + Status + ", price=" + price + "]";
 	}
 	
 }

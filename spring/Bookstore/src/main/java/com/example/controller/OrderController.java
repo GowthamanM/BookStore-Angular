@@ -57,5 +57,13 @@ public class OrderController {
 		System.out.println(id);
 	}
 	
+	@PostMapping("/placeOrder")
+	public void placeOrder(@RequestBody OrderTemp order) {
+		int price = Integer.parseInt(order.getPrice());
+		int quantity =order.getQuantity();
+		order.setTotalPrice(price*quantity + "");
+		orderRepo.save(order);
+		System.out.println(order);
+	}
 	
 }

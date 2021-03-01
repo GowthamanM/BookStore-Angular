@@ -10,7 +10,7 @@ describe('UserOrderService', () => {
     service = TestBed.inject(UserOrderService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+  // it('should be created', () => {
+  //   expect(service).toBeTruthy();
+  // });
 });
