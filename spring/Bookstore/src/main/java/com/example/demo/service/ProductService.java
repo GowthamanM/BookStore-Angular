@@ -45,6 +45,20 @@ public class ProductService {
 		return product.get();
 	}
 	
+	// Get the product by Name
+	public ProductModel getproductByName(String productName) {	
+		Optional<ProductModel> product = null;
+		try {
+			product = productRepo.findByProductName(productName);
+			if(product.isEmpty()) {
+				System.out.println("product not found in product repo");
+			}	
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return product.get();
+	}
+	
 //	Save the product
 	public boolean saveproduct(ProductModel product) {
 		try {
