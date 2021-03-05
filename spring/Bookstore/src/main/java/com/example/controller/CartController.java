@@ -41,6 +41,18 @@ public class CartController {
 		cartRepo.save(cart);
 	}
 	
+	@PostMapping("/home/dup/{id}")
+	public void addToCartByName(@RequestBody String Quantity,@PathVariable String id) {
+		ProductModel p = productRepo.getproductByName(id);
+		CartTempModel cart = new CartTempModel();
+		String[] arr = Quantity.split(" ");
+		cart.setQuantity(Integer.parseInt(arr[0]));
+		cart.setUserId(arr[1]);
+		cart.setProductName(p.getProductName());
+		cart.setPrice(p.getPrice());
+		cartRepo.save(cart);
+	}
+	
 	@GetMapping("/cart/{id}")
 	public List<CartTempModel> showCart(@PathVariable String id){
 		return (List<CartTempModel>) cartRepo.findByUserId(id);
