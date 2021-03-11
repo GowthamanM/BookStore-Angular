@@ -5,21 +5,12 @@ import { OrderlistComponent } from './orderlist.component';
 describe('OrderlistComponent', () => {
   let component: OrderlistComponent;
   let fixture: ComponentFixture<OrderlistComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ OrderlistComponent ]
-    })
-    .compileComponents();
-  });
-
+  let orderListService:any;
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrderlistComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new OrderlistComponent(orderListService);
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

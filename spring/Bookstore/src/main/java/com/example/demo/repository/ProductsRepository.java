@@ -11,5 +11,7 @@ import com.example.model.ProductModel;
 public interface ProductsRepository extends JpaRepository<ProductModel, String> {
 
 	Optional<ProductModel> findByProductName(String productName);
+
+	void deleteByProductName(String name);
 	
 }

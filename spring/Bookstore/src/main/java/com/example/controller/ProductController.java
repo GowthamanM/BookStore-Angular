@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.RestController;
 
- 
 
 import com.example.demo.repository.ProductsRepository;
 import com.example.demo.service.ProductService;
@@ -67,6 +67,9 @@ public class ProductController {
     @PostMapping("/admin/addProduct")
     public void productSave(@RequestBody ProductModel data) {
         ProductModel product = new ProductModel();
+        if(data.getProductId() != "") {
+        	product.setProductId(data.getProductId());
+        }
         product.setProductName(data.getProductName());
         product.setPrice(data.getPrice());
         product.setImageUrl(data.getImageUrl());
@@ -80,5 +83,10 @@ public class ProductController {
     public void productDelete(@PathVariable String id) {
     	System.out.println(id);
     	productService.deleteproductById(id);
+    }
+    
+    @GetMapping("/admin/deleteByName/{name}")
+    public void productDeleteByName(@PathVariable String name) {
+    	productRepo.deleteByProductName(name);
     }
 }

@@ -5,21 +5,14 @@ import { DashboardComponent } from './dashboard.component';
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
-    })
-    .compileComponents();
-  });
-
+  let router:any;
+  let productService:any;
+  let productDeleteService:any;
+  let productEditService:any
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new DashboardComponent(router,productService,productDeleteService,productEditService);
   });
-
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('test_case3', () => {
+    expect(component).toBeTruthy();
+  });
 });

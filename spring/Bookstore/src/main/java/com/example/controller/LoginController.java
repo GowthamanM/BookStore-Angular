@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,7 @@ public class LoginController {
 
 	@Autowired
 	UserRepository userRepo;
+	
 	
 	@PostMapping("/login")
 	public boolean checkUser(@RequestBody LoginModel data) {

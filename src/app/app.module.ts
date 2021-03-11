@@ -18,7 +18,6 @@ import { ProductListComponent } from './home/product-list/product-list.component
 import { AddproductComponent } from './admin/addproduct/addproduct.component';
 import { ProductListItemComponent } from './home/product-list/product-list-item/product-list-item.component';
 import { ProductDetailComponent } from './home/product-detail/product-detail.component';
-import { OrdersComponent } from './admin/orders/orders.component';
 import { CartComponent } from './cart/cart.component';
 import { UserOrderComponent } from './user-order/user-order.component';
 @NgModule({
@@ -37,7 +36,6 @@ import { UserOrderComponent } from './user-order/user-order.component';
     AddproductComponent,
     ProductListItemComponent,
     ProductDetailComponent,
-    OrdersComponent,
     CartComponent,
     UserOrderComponent
   ],

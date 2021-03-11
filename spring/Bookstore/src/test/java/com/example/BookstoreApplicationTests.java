@@ -38,7 +38,7 @@ public class BookstoreApplicationTests {
     public void TestCase1() throws Exception {
 		 
 		//Sign Up
-	 	String userOne = "{\"email\":\"Test@gmail.com\",\"username\":\"TestSignup\",\"mobileNumber\":\"1234598760\",\"password\":\"Testing\"}";
+	 	String userOne = "{\"email\":\"test@iamneo.ai\",\"username\":\"TestUser\",\"mobileNumber\":\"1234598760\",\"password\":\"neo\"}";
 	 	mockMvc.perform(MockMvcRequestBuilders.post("/signup")
 	 			.contentType(MediaType.APPLICATION_JSON)
 	 			.content(userOne)
@@ -48,7 +48,7 @@ public class BookstoreApplicationTests {
 	        	.andReturn();
 	    
 	 	//Login
-	    String dataOne = "{\"email\":\"Test@gmail.com\",\"password\":\"Testing\"}";
+	    String dataOne = "{\"email\":\"test@iamneo.com\",\"password\":\"neo\"}";
 	    mockMvc.perform(MockMvcRequestBuilders.post("/login")
 	    		.contentType(MediaType.APPLICATION_JSON)
 	    		.content(dataOne)
@@ -62,13 +62,19 @@ public class BookstoreApplicationTests {
 	//Add Product
 	@Test
 	public void TestCase2() throws Exception {
-		String prodOne = "{\"productId\":\"123\",\"imageUrl\":\"TestingURL\",\"productName\":\"TestingName\",\"price\":\"100\",\"description\":\"TestingDescription\",\"quantity\":10}";
-	    mockMvc.perform(MockMvcRequestBuilders.post("/admin/addProduct")
-	    		.contentType(MediaType.APPLICATION_JSON)
-	    		.content(prodOne)
+//		String prodOne = "{\"productId\":\"12345\",\"imageUrl\":\"TestingURL\",\"productName\":\"FixedOne2\",\"price\":\"100\",\"description\":\"TestingDescription\",\"quantity\":10}";
+//	    mockMvc.perform(MockMvcRequestBuilders.post("/admin/addProduct")
+//	    		.contentType(MediaType.APPLICATION_JSON)
+//	    		.content(prodOne)
+//	    		.accept(MediaType.APPLICATION_JSON))
+//	        	.andExpect(status().isOk())
+//	        	.andReturn();
+	    
+	    mockMvc.perform(MockMvcRequestBuilders.get("/admin/deleteByName/FixedOne2")
 	    		.accept(MediaType.APPLICATION_JSON))
 	        	.andExpect(status().isOk())
 	        	.andReturn();
+	    
     }
 	 
 	 

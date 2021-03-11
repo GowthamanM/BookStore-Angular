@@ -5,21 +5,12 @@ import { AddproductComponent } from './addproduct.component';
 describe('AddproductComponent', () => {
   let component: AddproductComponent;
   let fixture: ComponentFixture<AddproductComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AddproductComponent ]
-    })
-    .compileComponents();
-  });
-
+  let router:any;
+  let addproductService:any;
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddproductComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new AddproductComponent(router,addproductService);
   });
-
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

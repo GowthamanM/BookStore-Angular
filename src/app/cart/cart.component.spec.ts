@@ -1,25 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { CartComponent } from './cart.component';
+import { Router } from '@angular/router';
 
 describe('CartComponent', () => {
   let component: CartComponent;
   let fixture: ComponentFixture<CartComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ CartComponent ]
-    })
-    .compileComponents();
-  });
+  let cartService:any;
+  let loginService:any;
+  let router:any;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CartComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new CartComponent(router,cartService,loginService);
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

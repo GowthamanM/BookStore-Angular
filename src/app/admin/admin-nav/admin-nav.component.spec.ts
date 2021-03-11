@@ -1,25 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 import { AdminNavComponent } from './admin-nav.component';
 
 describe('AdminNavComponent', () => {
   let component: AdminNavComponent;
   let fixture: ComponentFixture<AdminNavComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AdminNavComponent ]
-    })
-    .compileComponents();
-  });
+  let router:Router;
+  let loginServices:LoginService;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminNavComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new AdminNavComponent(loginServices,router);
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('test_case1', () => {
+    expect(component).toBeDefined();
+});
+
 });
